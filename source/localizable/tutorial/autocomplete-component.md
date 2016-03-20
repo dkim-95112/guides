@@ -15,7 +15,7 @@ As before, this creates a Handlebars template
 The Handlebars template looks like this:
 
 ```app/templates/components/filter-listing.hbs
-City: {{input value=filter key-up=(action 'autoComplete' filter)}} 
+City: {{input value=filter key-up=(action 'autoComplete')}} 
 <button {{action 'search'}}>Search</button>
 
 <ul>
@@ -25,11 +25,10 @@ City: {{input value=filter key-up=(action 'autoComplete' filter)}}
 </ul>
 ```
 It contains an [`{{input}}`](../../templates/input-helpers) helper, that 
-renders as a text field that the user can type in to look for properties 
+renders as a text field that the user can type in to look for rentals 
 in a given city. The `value` property of the `input` will be bound to the 
-`filter` property in our component. The `key-up` property 
-will be bound to a `autoComplete` action in our backing object, and passes
- the `filter` property as a parameter.
+`filter` property in our component. The `key-up` property will be bound 
+to the `autoComplete` action.
 
 It also contains a button, whose `action` parameter is bound to the 
 `search` action in our component.
